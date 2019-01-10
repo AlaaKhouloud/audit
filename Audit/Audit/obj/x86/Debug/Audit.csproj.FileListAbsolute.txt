@@ -1,0 +1,14 @@
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\bin\Debug\Audit.exe.config
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\bin\Debug\Audit.exe
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\bin\Debug\Audit.pdb
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Form1.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.gestionChangement.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.ITIL.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Properties.Resources.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.sControleStratgie.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.slogique.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.sphysique.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.splan.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.csproj.GenerateResource.Cache
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.exe
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.pdb
