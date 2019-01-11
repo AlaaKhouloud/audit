@@ -39,6 +39,7 @@
             this.iTILToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailsDuSuivisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.générerLeChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scoreParRisqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@
             this.gestionDesChangementsToolStripMenuItem,
             this.iTILToolStripMenuItem,
             this.detailsDuSuivisToolStripMenuItem,
-            this.générerLeChartToolStripMenuItem});
+            this.générerLeChartToolStripMenuItem,
+            this.scoreParRisqueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1233, 24);
@@ -122,12 +124,20 @@
             this.detailsDuSuivisToolStripMenuItem.Name = "detailsDuSuivisToolStripMenuItem";
             this.detailsDuSuivisToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.detailsDuSuivisToolStripMenuItem.Text = "Details du suivis";
+            this.detailsDuSuivisToolStripMenuItem.Click += new System.EventHandler(this.detailsDuSuivisToolStripMenuItem_Click);
             // 
             // générerLeChartToolStripMenuItem
             // 
             this.générerLeChartToolStripMenuItem.Name = "générerLeChartToolStripMenuItem";
-            this.générerLeChartToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.générerLeChartToolStripMenuItem.Text = "Générer le chart";
+            this.générerLeChartToolStripMenuItem.Size = new System.Drawing.Size(22, 20);
+            this.générerLeChartToolStripMenuItem.Text = " ";
+            // 
+            // scoreParRisqueToolStripMenuItem
+            // 
+            this.scoreParRisqueToolStripMenuItem.Name = "scoreParRisqueToolStripMenuItem";
+            this.scoreParRisqueToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.scoreParRisqueToolStripMenuItem.Text = "Score par risque";
+            this.scoreParRisqueToolStripMenuItem.Click += new System.EventHandler(this.scoreParRisqueToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -159,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem iTILToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsDuSuivisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem générerLeChartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scoreParRisqueToolStripMenuItem;
     }
 }
 

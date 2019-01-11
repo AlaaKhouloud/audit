@@ -103,11 +103,30 @@ namespace Audit
             else
                 forme6.Activate();
         }
-
-
-
- 
-
+        Suivi forme8;
+        private void detailsDuSuivisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (forme8 == null)
+            {
+                forme8 = new Suivi();
+                forme8.MdiParent = this;
+                forme8.Show();
+            }
+            else
+                forme8.Activate();
+        }
+        Score forme7;
+        private void scoreParRisqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (forme7 == null)
+            {
+                forme7 = new Score();
+                forme7.MdiParent = this;
+                forme7.Show();
+            }
+            else
+                forme7.Activate();
+        }
         
     }
 }

@@ -12,3 +12,9 @@ C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.splan.reso
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.csproj.GenerateResource.Cache
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.exe
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.pdb
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Suivi.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.csprojResolveAssemblyReference.cache
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Score.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Chart_page.resources
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\RdlCompile.cache
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\RdlCompile.compiled

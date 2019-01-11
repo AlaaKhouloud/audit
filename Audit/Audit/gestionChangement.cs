@@ -16,38 +16,49 @@ namespace Audit
         {
             InitializeComponent();
         }
-
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-FFB7557;Initial Catalog=crypto_project;Integrated Security=True");
+        SqlDataAdapter sqlAdapter = null;
+        SqlCommandBuilder sqlCommand = null;
+        DataSet dataset = null;
+        SqlCommandBuilder cmdbl = null;
         private void gestionChangement_Load(object sender, EventArgs e)
         {
-            //fill datagridview from database
-            string connetionString = "Data Source=DESKTOP-FFB7557;Initial Catalog=crypto_project;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connetionString); ;
-            SqlCommand command = new SqlCommand();
-            SqlDataAdapter sqlDataAdap = null;
-            DataTable dtRecord = null;
-            string sql = "select * from Audit_questions where title = 'Gestions des changements'"; ;
+            connection.Open();
+            //fill datagridview from database 
+            string sql = "select id_question as 'N°' , subtitle , question , coeficient , jugement , commentaire from Audit_questions where title = 'Gestion des changements'"; 
+            sqlAdapter = new SqlDataAdapter(sql, connection);
+            sqlCommand = new SqlCommandBuilder(sqlAdapter);
+            dataset = new DataSet();
+            sqlAdapter.Fill(dataset, "data");
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = dataset.Tables["data"];
 
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns["subtitle"].ReadOnly = true;
+            dataGridView1.Columns["question"].ReadOnly = true;
+            dataGridView1.Columns["coeficient"].ReadOnly = true;
+
+            label2.Text = (this.dataGridView1.RowCount - 1).ToString(); 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //save modifs into database
             try
             {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandType = CommandType.Text;
-                command.CommandText = sql;
-                sqlDataAdap = new SqlDataAdapter(command);
-
-                dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-                dataGridView1.DataSource = dtRecord;
-
-                command.Dispose();
-                connection.Close();
+                cmdbl = new SqlCommandBuilder(sqlAdapter);
+                sqlAdapter.Update(dataset, "data");
+                label2.Text = (this.dataGridView1.RowCount - 1).ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not open connection ! ");
+                MessageBox.Show(ex.Message);
             }
-            //how many questions do we treat?
-            label3.Text = (this.dataGridView1.RowCount - 1).ToString(); 
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Lime;
         }
     }
 }
