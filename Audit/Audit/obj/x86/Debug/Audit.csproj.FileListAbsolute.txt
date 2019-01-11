@@ -18,3 +18,4 @@ C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Score.reso
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.Chart_page.resources
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\RdlCompile.cache
 C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\RdlCompile.compiled
+C:\Users\real1\Desktop\Crypto_project\Audit\Audit\obj\x86\Debug\Audit.csproj.ResolveComReference.cache

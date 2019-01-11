@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using GemBox.Presentation;
+using Microsoft.Office.Core;
+using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 namespace Audit
 {
@@ -306,6 +309,36 @@ namespace Audit
         {
             Chart_page chart = new Chart_page();
             chart.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Set license key to use GemBox.Presentation in Free mode.
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY"); 
+            var presentation = new PresentationDocument(); 
+            var slide = presentation.Slides.AddNew(SlideLayoutType.Custom); 
+            var textBox = slide.Content.AddTextBox(0, 0, 5, 5, LengthUnit.Centimeter); 
+            textBox.AddParagraph().AddRun("Hello World!");
+
+
+
+
+            // Save to PPTX and PDF files.
+            presentation.Save("Presentation.pptx"); 
+            //open it
+            var app = new PowerPoint.Application();
+            var pres = app.Presentations;
+            var file = pres.Open(@"C:\Users\real1\Desktop\Crypto_project\Audit\Audit\bin\Debug\Presentation.pptx", MsoTriState.msoFalse, MsoTriState.msoTrue, MsoTriState.msoFalse);
+            PowerPoint.SlideShowSettings slideSetting = file.SlideShowSettings;
+            slideSetting.Run();
+
+            PowerPoint.SlideShowWindows slideShowWindows = app.SlideShowWindows;
+            while (true)
+            {
+                if (slideShowWindows.Count <= 0)
+                    break;
+                System.Threading.Thread.Sleep(100);
+            }
         }
     }
 }
