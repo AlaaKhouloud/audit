@@ -20,7 +20,7 @@ namespace Audit
         SqlConnection connection = new SqlConnection("Data Source=DESKTOP-FFB7557;Initial Catalog=crypto_project;Integrated Security=True");
         SqlDataAdapter sqlAdapter = null;
         SqlCommandBuilder sqlCommand = null;
-        DataSet dataset = null;
+        DataSet dataset = new DataSet();
         SqlCommandBuilder cmdbl = null;
         private void splan_Load(object sender, EventArgs e)
         {
@@ -39,18 +39,7 @@ namespace Audit
                 dataGridView1.Columns["question"].ReadOnly = true;
                 dataGridView1.Columns["coeficient"].ReadOnly = true;
 
-
-
-                //color rows that are treated (not working!!)
-                for (int i = 0; i < dataset.Tables["data"].Rows.Count; i++)
-                {
-                    if (dataset.Tables["data"].Rows[i]["jugement"].Equals("oui") || dataset.Tables["data"].Rows[i]["jugement"].Equals("non"))
-                    {
-                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
-                    } 
-                } 
-                //
-
+                dataGridView1.Visible = true;
                 label2.Text = (this.dataGridView1.RowCount-1).ToString();
         }
 
@@ -73,5 +62,21 @@ namespace Audit
         {
             dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Lime;
         }
+
+        private void dataGridView1_VisibleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[4].Value.ToString() == "oui" || dataGridView1.Rows[i].Cells[4].Value.ToString() == "non") 
+                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+ 
     }
 }

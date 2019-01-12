@@ -37,7 +37,7 @@ namespace Audit
             dataGridView1.Columns["subtitle"].ReadOnly = true;
             dataGridView1.Columns["question"].ReadOnly = true;
             dataGridView1.Columns["coeficient"].ReadOnly = true;
-
+            dataGridView1.Visible = true;
             label2.Text = (this.dataGridView1.RowCount - 1).ToString(); 
         }
 
@@ -59,6 +59,21 @@ namespace Audit
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Lime;
+        }
+
+        private void dataGridView1_VisibleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[4].Value.ToString() == "oui" || dataGridView1.Rows[i].Cells[4].Value.ToString() == "non")
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }
